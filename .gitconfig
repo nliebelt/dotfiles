@@ -185,8 +185,3 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-
-[user]
-
-	name = Nils Liebelt
-	email = nils.liebelt@serie-a.de

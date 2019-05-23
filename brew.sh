@@ -98,10 +98,13 @@ brew install tree
 #brew install vbindiff
 #brew install zopfli
 
+brew install rsync
 brew install bats
 brew install maven@3.5
 brew install htop
 brew install jq
+brew install jenv
+brew install node
 
 
 # Remove outdated versions from the cellar.
