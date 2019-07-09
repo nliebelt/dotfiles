@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+#set -x
 
 # Install command-line tools using Homebrew.
 
@@ -8,7 +8,7 @@ set -x
 brew update
 
 # Upgrade any already-installed formulae.
-#brew upgrade
+brew upgrade
 
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
@@ -20,11 +20,13 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
+
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-# Install Bash 4.
+brew install gnu-sed #--with-default-names
+
+# Install Bash 5.0
 brew install bash
 brew install bash-completion2
 
@@ -35,7 +37,7 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget #--with-iri
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
@@ -46,7 +48,7 @@ brew install grep
 brew install openssh
 brew install screen
 #brew install php
-brew install gmp
+#brew install gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -100,12 +102,24 @@ brew install tree
 
 brew install rsync
 brew install bats
-brew install maven@3.5
 brew install htop
 brew install jq
 brew install jenv
-brew install node
 
+#Install latest jdk
+brew install java
+brew install maven
+
+brew install node
+brew install zsh
+
+brew tap caskroom/versions
+brew tap adoptopenjdk/openjdk
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+
+# To be able to safely run 'brew cleanup'
+brew untap adoptopenjdk/openjdk
+brew untap caskroom/versions
 
 # Remove outdated versions from the cellar.
 brew cleanup

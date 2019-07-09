@@ -32,3 +32,10 @@ export MANPAGER='less -X';
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
+
+
+export PATH="$HOME/.jenv/bin:${PATH}"
+export PATH="$HOME/.jenv/shims:${PATH}"
+
+# Set JAVA_HOME
+export JAVA_HOME="$(jenv javahome)"
